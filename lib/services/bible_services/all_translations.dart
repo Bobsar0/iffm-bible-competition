@@ -24,34 +24,6 @@ final List<Map<String, dynamic>> bibleTranslations = [
     "audioBibles": []
   },
   {
-    "id": "06125adad2d5898a-01",
-    "dblId": "06125adad2d5898a",
-    "relatedDbl": null,
-    "name": "The Holy Bible, American Standard Version",
-    "nameLocal": "The Holy Bible, American Standard Version",
-    "abbreviation": "ASV",
-    "abbreviationLocal": "ASV",
-    "description": "Bible",
-    "descriptionLocal": "Bible",
-    "language": {
-      "id": "eng",
-      "name": "English",
-      "nameLocal": "English",
-      "script": "Latin",
-      "scriptDirection": "LTR"
-    },
-    "countries": [
-      {
-        "id": "US",
-        "name": "United States of America",
-        "nameLocal": "United States of America"
-      }
-    ],
-    "type": "text",
-    "updatedAt": "2022-01-06T22:22:14.000Z",
-    "audioBibles": []
-  },
-  {
     "id": "a36fc06b086699f1-02",
     "dblId": "a36fc06b086699f1",
     "relatedDbl": null,
