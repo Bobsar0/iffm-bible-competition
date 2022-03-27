@@ -94,12 +94,11 @@ class ParticipantController with ChangeNotifier, DiagnosticableTreeMixin {
 
   Future<bool> createParticipant() async {
     try {
-      final Participant participant =
-          await services.createParticipant(nameController.text);
-      print('participant added: ${participant.name}');
+      if (nameController.text.trim().isEmpty) return false;
+      await services.createParticipant(nameController.text.trim());
       return true;
     } catch (e) {
-      print('error: $e');
+      Logger.logCritical('Error in adding participant: $e');
       return false;
     } finally {
       notifyListeners();

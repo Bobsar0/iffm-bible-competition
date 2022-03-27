@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bible_competition/controllers/competition_controller.dart';
+import 'package:bible_competition/controllers/participant_controller.dart';
 import 'package:bible_competition/views/components/custom_alert_dialog.dart';
 import 'package:bible_competition/views/components/default_sized_box.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,14 @@ class _CountdownTimerState extends State<CountdownTimer> {
 
   Future<void> startTimer(BuildContext context) async {
     const oneSec = Duration(seconds: 1);
+    final List<String>? participantNames =
+        Provider.of<ParticipantController>(context, listen: false)
+            .activeParticipant
+            ?.name
+            ?.split(" ");
+
+    final firstName =
+        participantNames == null ? 'Participant' : participantNames[0];
     _timer = Timer.periodic(
       oneSec,
       (Timer timer) {
@@ -26,15 +35,11 @@ class _CountdownTimerState extends State<CountdownTimer> {
           ModalDialog(
               context: context,
               message:
-                  "Participant's time is up. Click button to reveal scripture verse",
+                  "$firstName's time is up. Click button to reveal scripture verse.",
               title: 'Time Up!',
               actionBtnText: 'Reveal Scripture content',
               onActionBtnPressed: () =>
-                  context.read<CompetitionController>().toggleShowPassage()
-              // onActionBtnPressed: () async => await context
-              //     .read<CompetitionController>()
-              //     .searchBiblePassage(),
-              );
+                  context.read<CompetitionController>().toggleShowPassage());
 
           setState(() {
             timer.cancel();
