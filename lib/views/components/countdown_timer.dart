@@ -15,7 +15,7 @@ class CountdownTimer extends StatefulWidget {
 
 class _CountdownTimerState extends State<CountdownTimer> {
   late Timer _timer;
-  int _currCount = 3;
+  int _currCount = 10;
 
   Future<void> startTimer(BuildContext context) async {
     const oneSec = Duration(seconds: 1);
