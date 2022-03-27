@@ -1,4 +1,4 @@
-import 'package:bible_competition/views/pages/competition_page/components/competitors_widget.dart';
+import 'package:bible_competition/views/pages/competition_page/components/all_competitors_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../components/scripture_widget.dart';
@@ -18,7 +18,7 @@ class CompetitionPage extends StatelessWidget {
         padding: const EdgeInsets.all(40),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+          children: const [
             Expanded(flex: 2, child: CompetitorsWidget()),
             SizedBox(width: 20),
             Expanded(flex: 3, child: ScriptureWidget())

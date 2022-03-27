@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
                   ElevatedButton(
                       onPressed: () async => await context
                           .read<ParticipantController>()
@@ -48,9 +48,7 @@ class HomePage extends StatelessWidget {
                       child: const Text('Add'))
                 ],
               ),
-              // const SizedBox(height: 15),
               const Expanded(child: AllParticipantsWidget()),
-              // const SizedBox(height: 15),
               ElevatedButton(
                   onPressed: controller.allParticipants.isEmpty
                       ? null
